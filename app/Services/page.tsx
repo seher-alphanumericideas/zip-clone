@@ -2,76 +2,78 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const services = [
   {
-    title: "PPC Management",
+    title: "Business Strategies",
     description:
-      "We help you run efficient pay-per-click campaigns to boost your visibility and ROI using data-driven strategies.",
+      "Crafting tailored business plans to maximize ROI and structure your growth path effectively.",
   },
   {
-    title: "SEO Optimization",
+    title: "Digital Marketing",
     description:
-      "Optimize your website to rank higher in search engines and drive organic traffic through modern SEO techniques.",
+      "End-to-end digital campaigns—including PPC, SEO, and social media—to elevate your online presence.",
   },
   {
-    title: "Corporate Training",
+    title: "Performance Optimization",
     description:
-      "Empower your team with customized training programs designed to enhance skills and performance across departments.",
+      "Ongoing analytics, A/B testing, and performance tweaking to continually improve results.",
   },
 ];
 
 const Services = () => {
-  const [selectedService, setSelectedService] = useState<string | null>(null);
-
-  const getDescription = (title: string) =>
-    services.find((s) => s.title === title)?.description || "";
+  const [selected, setSelected] = useState<string | null>(null);
+  const getDesc = (t: string) => services.find((s) => s.title === t)?.description;
 
   return (
-    <section id="services" className="py-20 bg-black text-yellow-400">
-      <div className="container mx-auto px-6">
+    <section id="services" className="py-24 bg-black text-yellow-400 min-h-screen">
+      <div className="max-w-6xl mx-auto px-6">
         <motion.h3
-          className="text-4xl font-extrabold mb-10 text-center"
-          initial={{ opacity: 0, y: -30 }}
+          className="text-5xl font-extrabold text-center mb-16 drop-shadow-[0_0_10px_rgba(234,179,8,0.5)]"
+          initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          My Services
+          Our Services
         </motion.h3>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {services.map((service, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {services.map((svc, i) => (
             <motion.div
-              key={index}
-              onClick={() => setSelectedService(service.title)}
-              className={`p-6 rounded-2xl text-center cursor-pointer border-2 transition-all duration-300 ${
-                selectedService === service.title
-                  ? "border-yellow-400 bg-yellow-100 text-black"
-                  : "border-yellow-400 hover:bg-yellow-400 hover:text-black"
+              key={i}
+              onClick={() => setSelected(svc.title)}
+              className={`border-2 border-yellow-400 rounded-2xl p-8 flex flex-col items-center text-center transition-all duration-300 cursor-pointer ${
+                selected === svc.title
+                  ? "bg-yellow-100 text-black scale-105"
+                  : "bg-black hover:bg-yellow-400 hover:text-black"
               }`}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: i * 0.2 }}
               viewport={{ once: true }}
             >
-              <span className="text-xl font-semibold">{service.title}</span>
+              <span className="text-2xl font-semibold mb-4">{svc.title}</span>
+              <Link href="/contact">
+                <button className="mt-auto bg-yellow-400 text-black px-6 py-2 rounded-full font-medium hover:bg-yellow-300 transition">
+                  Get Started
+                </button>
+              </Link>
             </motion.div>
           ))}
         </div>
 
-        {selectedService && (
+        {selected && (
           <motion.div
-            className="mt-10 max-w-3xl mx-auto text-center text-yellow-300"
+            className="mt-12 text-center max-w-3xl mx-auto text-yellow-300"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.5 }}
           >
-            <h4 className="text-2xl font-bold mb-4">
-              {selectedService}
-            </h4>
-            <p className="text-lg font-medium px-4">
-              {getDescription(selectedService)}
+            <h4 className="text-2xl font-bold mb-4">{selected}</h4>
+            <p className="text-lg leading-relaxed px-4">
+              {getDesc(selected)}
             </p>
           </motion.div>
         )}
