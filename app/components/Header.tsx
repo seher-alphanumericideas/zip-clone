@@ -7,7 +7,7 @@ export default function Header() {
     <header className="bg-black text-yellow-400 flex justify-between items-center px-6 py-4">
       <h1 className="text-2xl font-bold">The Zippinder Way</h1>
       <nav className="space-x-6">
-        {["home", "about", "clients", "contact", "hero", "testimonials", "services"].map((route) => (
+        {["Home", "About", "Clients", "Contact", "Hero", "Testimonials", "Services"].map((route) => (
           <Link
             key={route}
             href={`/${route === "home" ? "" : route}`}
