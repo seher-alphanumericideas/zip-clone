@@ -74,19 +74,25 @@ const Circle = ({ value, label }: { value: number; label: string }) => {
           {progress}%
         </span>
       </div>
-      <p className="text-yellow-400 font-medium">{label}</p>
+      <p className="text-yellow-400 font-medium" style={{ fontFamily: "Trebuchet MS, sans-serif" }}>
+        {label}
+      </p>
     </div>
   );
 };
 
 const Hero = () => (
   <>
-    <section className="bg-black text-yellow-400 py-28 text-center flex flex-col items-center justify-center px-6">
+    <section
+      className="bg-black text-yellow-400 py-28 text-center flex flex-col items-center justify-center px-6"
+      style={{ fontFamily: "Trebuchet MS, sans-serif" }}
+    >
       <motion.h2
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight"
+        style={{ fontFamily: "Georgia, serif" }}
       >
         Digital Marketing Expert
       </motion.h2>
@@ -103,7 +109,7 @@ const Hero = () => (
     </section>
 
     {/* Skills Section */}
-    <section className="bg-black text-yellow-400">
+    <section className="bg-black text-yellow-400" style={{ fontFamily: "Trebuchet MS, sans-serif" }}>
       <h3 className="text-4xl font-bold text-center mb-12 text-yellow-400">SKILLS</h3>
       <div className="flex justify-center flex-wrap gap-10 px-6">
         {skills.map((skill, i) => (

@@ -5,9 +5,11 @@ import Link from "next/link";
 export default function Header() {
   return (
     <header className="bg-black text-yellow-400 flex justify-between items-center px-6 py-4">
-      <h1 className="text-2xl font-bold">The Zippinder Way</h1>
+      <h1 className="text-2xl font-bold" style={{ fontFamily: "cursive" }}>
+  The Zippinder Way
+</h1>
       <nav className="space-x-6">
-        {["Home", "About", "Clients", "Contact", "Hero", "Testimonials", "Services"].map((route) => (
+        {["home", "about", "clients", "contact", "hero", "testimonials", "services"].map((route) => (
           <Link
             key={route}
             href={`/${route === "home" ? "" : route}`}

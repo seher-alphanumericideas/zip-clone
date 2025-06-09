@@ -28,7 +28,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="bg-black text-yellow-400 py-24 px-6">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto" style={{ fontFamily: "Trebuchet MS, sans-serif" }}>
         {/* Heading */}
         <motion.h3
           initial={{ opacity: 0, y: 50 }}
@@ -36,6 +36,7 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-5xl font-extrabold mb-6 text-center tracking-wide drop-shadow-[0_0_10px_rgba(234,179,8,0.4)]"
+          style={{ fontFamily: "Georgia, serif" }}
         >
           Contact Me
         </motion.h3>

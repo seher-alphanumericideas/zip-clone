@@ -36,17 +36,17 @@ const listAnimation = {
 
 export default function AboutPage() {
   return (
-    <section className="bg-black text-yellow-400 py-24 px-6">
-      <div className="max-w-4xl mx-auto text-center">
-        <motion.h3
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-5xl font-extrabold mb-6 tracking-wide drop-shadow-[0_0_10px_rgba(234,179,8,0.6)]"
-        >
-          About Me
-        </motion.h3>
+    <section className="bg-black text-yellow-400 py-24 px-6" style={{ fontFamily: "Georgia, serif" }}>
+  <div className="max-w-4xl mx-auto text-center">
+    <motion.h3
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="text-5xl font-extrabold mb-6 tracking-wide drop-shadow-[0_0_10px_rgba(234,179,8,0.6)]"
+    >
+      About Me
+    </motion.h3>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}

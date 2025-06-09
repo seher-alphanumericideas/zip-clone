@@ -27,10 +27,15 @@ const Services = () => {
   const getDesc = (t: string) => services.find((s) => s.title === t)?.description;
 
   return (
-    <section id="services" className="py-24 bg-black text-yellow-400 min-h-screen">
+    <section
+      id="services"
+      className="py-24 bg-black text-yellow-400 min-h-screen"
+      style={{ fontFamily: "Trebuchet MS, sans-serif" }}
+    >
       <div className="max-w-6xl mx-auto px-6">
         <motion.h3
           className="text-5xl font-extrabold text-center mb-16 drop-shadow-[0_0_10px_rgba(234,179,8,0.5)]"
+          style={{ fontFamily: "Georgia, serif" }}
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
@@ -72,9 +77,7 @@ const Services = () => {
             transition={{ duration: 0.5 }}
           >
             <h4 className="text-2xl font-bold mb-4">{selected}</h4>
-            <p className="text-lg leading-relaxed px-4">
-              {getDesc(selected)}
-            </p>
+            <p className="text-lg leading-relaxed px-4">{getDesc(selected)}</p>
           </motion.div>
         )}
       </div>

@@ -11,14 +11,15 @@ const Clients = () => (
   >
     <div className="max-w-6xl mx-auto text-center">
       <motion.h3
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="text-5xl font-extrabold mb-12 tracking-wider drop-shadow-[0_0_10px_rgba(234,179,8,0.5)]"
-      >
-        Our Clients
-      </motion.h3>
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+  className="text-5xl font-extrabold mb-12 tracking-wider drop-shadow-[0_0_10px_rgba(234,179,8,0.5)]"
+  style={{ fontFamily: "Georgia, serif" }}
+>
+  Our Clients
+</motion.h3>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         {clientList.map((client, index) => (
