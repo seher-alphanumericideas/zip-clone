@@ -5,7 +5,10 @@ import { motion } from "framer-motion";
 const clientList = ["Client 1", "Client 2", "Client 3", "Client 4"];
 
 const Clients = () => (
-  <section id="clients" className="bg-black text-yellow-400 py-24 px-6">
+  <section
+    id="clients"
+    className="bg-black text-yellow-400 py-24 px-6 w-full min-h-screen"
+  >
     <div className="max-w-6xl mx-auto text-center">
       <motion.h3
         initial={{ opacity: 0, y: 50 }}

@@ -16,7 +16,7 @@ const testimonialVariants = {
 };
 
 const Testimonials = () => (
-  <section id="testimonials" className="py-20 bg-black container mx-auto px-4">
+  <section id="testimonials" className="py-20 bg-black w-full px-4">
     <h3 className="text-4xl font-extrabold mb-10 text-yellow-400 text-center">
       Testimonials
     </h3>
