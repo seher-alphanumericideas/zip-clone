@@ -37,16 +37,16 @@ const listAnimation = {
 export default function AboutPage() {
   return (
     <section className="bg-black text-yellow-400 py-24 px-6" style={{ fontFamily: "Georgia, serif" }}>
-  <div className="max-w-4xl mx-auto text-center">
-    <motion.h3
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      className="text-5xl font-extrabold mb-6 tracking-wide drop-shadow-[0_0_10px_rgba(234,179,8,0.6)]"
-    >
-      About Me
-    </motion.h3>
+      <div className="max-w-4xl mx-auto text-center">
+        <motion.h3
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-5xl font-extrabold mb-6 tracking-wide drop-shadow-[0_0_10px_rgba(234,179,8,0.6)]"
+        >
+          About Me
+        </motion.h3>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -54,6 +54,7 @@ export default function AboutPage() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-lg leading-loose text-yellow-300 max-w-3xl mx-auto mb-16"
+          style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
         >
           I'm <span className="font-semibold text-yellow-400">Zippinderpal Singh</span>, a seasoned digital marketing
           professional with over a decade of experience in <span className="font-semibold">PPC</span>,{" "}
@@ -62,7 +63,12 @@ export default function AboutPage() {
 
         {/* Awards */}
         <motion.div className="text-left mb-16">
-          <motion.h4 className="text-3xl font-bold mb-6">Awards & Certifications</motion.h4>
+          <motion.h4
+            className="text-3xl font-bold mb-6"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
+          >
+            Awards & Certifications
+          </motion.h4>
           <ul className="space-y-4">
             {awards.map((item, i) => (
               <motion.li
@@ -73,6 +79,7 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 variants={listAnimation}
                 className="flex items-center space-x-4"
+                style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 <motion.div
                   className="rounded-full bg-yellow-400 text-black p-1"
@@ -89,7 +96,12 @@ export default function AboutPage() {
 
         {/* Experience */}
         <motion.div className="text-left">
-          <motion.h4 className="text-3xl font-bold mb-6 text-yellow-400">Experience</motion.h4>
+          <motion.h4
+            className="text-3xl font-bold mb-6 text-yellow-400"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
+          >
+            Experience
+          </motion.h4>
           <ul className="space-y-4">
             {experience.map((item, i) => (
               <motion.li
@@ -100,6 +112,7 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 variants={listAnimation}
                 className="flex items-center space-x-4"
+                style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 <motion.div
                   className="rounded-full bg-yellow-400 text-black p-1"

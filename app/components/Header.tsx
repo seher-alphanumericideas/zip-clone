@@ -6,10 +6,10 @@ export default function Header() {
   return (
     <header className="bg-black text-yellow-400 flex justify-between items-center px-6 py-4">
       <h1 className="text-2xl font-bold" style={{ fontFamily: "cursive" }}>
-  The Zippinder Way
-</h1>
+        The Zippinder Way
+      </h1>
       <nav className="space-x-6">
-        {["home", "about", "clients", "contact", "hero", "testimonials", "services"].map((route) => (
+        {["home", "about", "blog", "clients", "contact", "hero", "testimonials", "services", "social"].map((route) => (
           <Link
             key={route}
             href={`/${route === "home" ? "" : route}`}

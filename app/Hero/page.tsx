@@ -11,6 +11,14 @@ const skills = [
   { label: "Corporate Training", value: 80 },
 ];
 
+const ventures = [
+  { label: "ECO India", year: 2013 },
+  { label: "YoYo Veg", year: 2015 },
+  { label: "Virasat Store", year: 2017 },
+  { label: "BeeZee Ventures", year: 2018 },
+  { label: "Alphanumeric Ideas", year: 2019 },
+];
+
 const Circle = ({ value, label }: { value: number; label: string }) => {
   const [progress, setProgress] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
@@ -81,43 +89,72 @@ const Circle = ({ value, label }: { value: number; label: string }) => {
   );
 };
 
-const Hero = () => (
-  <>
-    <section
-      className="bg-black text-yellow-400 py-28 text-center flex flex-col items-center justify-center px-6"
-      style={{ fontFamily: "Trebuchet MS, sans-serif" }}
-    >
-      <motion.h2
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight"
-        style={{ fontFamily: "Georgia, serif" }}
-      >
-        Digital Marketing Expert
-      </motion.h2>
+const Hero = () => {
+  const currentYear = new Date().getFullYear();
 
-      <motion.p
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-        className="text-xl md:text-2xl max-w-2xl"
+  return (
+    <>
+      <section
+        className="bg-black text-yellow-400 py-28 text-center flex flex-col items-center justify-center px-6"
+        style={{ fontFamily: "Trebuchet MS, sans-serif" }}
       >
-        Helping businesses grow through{" "}
-        <span className="underline decoration-yellow-500">effective online strategies</span>.
-      </motion.p>
-    </section>
+        <motion.h2
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight"
+          style={{ fontFamily: "Georgia, serif" }}
+        >
+          Digital Marketing Expert
+        </motion.h2>
 
-    {/* Skills Section */}
-    <section className="bg-black text-yellow-400" style={{ fontFamily: "Trebuchet MS, sans-serif" }}>
-      <h3 className="text-4xl font-bold text-center mb-12 text-yellow-400">SKILLS</h3>
-      <div className="flex justify-center flex-wrap gap-10 px-6">
-        {skills.map((skill, i) => (
-          <Circle key={i} value={skill.value} label={skill.label} />
-        ))}
-      </div>
-    </section>
-  </>
-);
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+          className="text-xl md:text-2xl max-w-2xl"
+        >
+          Helping businesses grow through{" "}
+          <span className="underline decoration-yellow-500">effective online strategies</span>.
+        </motion.p>
+      </section>
+
+      {/* Skills Section */}
+      <section className="bg-black text-yellow-400" style={{ fontFamily: "Trebuchet MS, sans-serif" }}>
+        <h3 className="text-4xl font-bold text-center mb-12 text-yellow-400">SKILLS</h3>
+        <div className="flex justify-center flex-wrap gap-10 px-6">
+          {skills.map((skill, i) => (
+            <Circle key={i} value={skill.value} label={skill.label} />
+          ))}
+        </div>
+      </section>
+
+      {/* Ventures Timeline Graph */}
+      <section className="bg-black text-yellow-400 py-20 px-6" style={{ fontFamily: "Verdana, sans-serif" }}>
+        <h3 className="text-4xl font-bold text-center mb-12 text-yellow-400">Zippinder's Ventures Timeline</h3>
+        <div className="max-w-3xl mx-auto space-y-6">
+          {ventures.map((venture, i) => {
+            const duration = currentYear - venture.year;
+            const widthPercent = Math.min(duration / (currentYear - 2013) * 100, 100);
+            return (
+              <div key={i} className="flex items-center space-x-4">
+                <span className="w-36 text-left font-semibold">{venture.label}</span>
+                <div className="w-full bg-gray-800 rounded-full h-4 overflow-hidden">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: `${widthPercent}%` }}
+                    transition={{ delay: i * 0.2, duration: 1 }}
+                    className="h-full bg-yellow-400"
+                  />
+                </div>
+                <span className="w-12 text-right">{duration} yrs</span>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+    </>
+  );
+};
 
 export default Hero;
