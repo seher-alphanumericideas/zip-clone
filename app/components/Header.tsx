@@ -9,7 +9,11 @@ export default function Header() {
         The Zippinder Way
       </h1>
       <nav className="space-x-6">
+<<<<<<< HEAD
         {["home", "about", "blog", "clients", "contact", "hero", "testimonials", "services", "social"].map((route) => (
+=======
+        {["Home", "About", "Clients", "Contact", "Hero", "Testimonials", "Services"].map((route) => (
+>>>>>>> a5a23e8eaee1a14b0e1605bebf4ce54aead272aa
           <Link
             key={route}
             href={`/${route === "home" ? "" : route}`}
