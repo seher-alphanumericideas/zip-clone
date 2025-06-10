@@ -39,8 +39,8 @@ export default function Home() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          "Corporate Trainer for Digital Marketing | Google Partners Academy Trainer | 
-          Digital Marketer | Performance Marketer | Serial Entrepreneur"
+          Corporate Trainer for Digital Marketing | Google Partners Academy Trainer | 
+          Digital Marketer | Performance Marketer | Serial Entrepreneur
         </motion.p>
       </section>
 
