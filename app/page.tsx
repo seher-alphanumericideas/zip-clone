@@ -19,8 +19,20 @@ export default function Home() {
         >
           ZIPPINDERPAL SINGH
         </motion.h2>
+
+        {/* Image below heading */}
+        <motion.img
+          src="/zippinder.png"
+          alt="Zippinderpal Singh"
+          className="mx-auto my-6 w-[1000px] max-w-full rounded-lg shadow-lg"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+        />
+
         <motion.p
           className="text-2xl font-light opacity-90"
+          style={{ fontFamily: "Arial, sans-serif" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.6 }}
@@ -32,8 +44,8 @@ export default function Home() {
       {/* Tagline */}
       <section className="py-12 px-6 text-center">
         <motion.p
-          style={{ fontFamily: "Courier New, monospace" }}
           className="text-xl max-w-3xl mx-auto"
+          style={{ fontFamily: "Arial, sans-serif" }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -60,7 +72,7 @@ export default function Home() {
             <motion.div
               key={i}
               className="px-6 py-4 border-2 border-yellow-400 rounded-full"
-              style={{ fontFamily: "Lucida Handwriting, cursive" }}
+              style={{ fontFamily: "Arial, sans-serif" }}
               variants={{
                 hidden: { opacity: 0, scale: 0.8 },
                 visible: { opacity: 1, scale: 1 },
@@ -86,7 +98,7 @@ export default function Home() {
           <Link href="/contact">
             <div
               className="inline-flex items-center gap-4 bg-yellow-400 text-black font-medium px-8 py-4 rounded-full cursor-pointer hover:bg-yellow-300 transition"
-              style={{ fontFamily: "Trebuchet MS, sans-serif" }}
+              style={{ fontFamily: "Arial, sans-serif" }}
             >
               Let’s Work Together On Your Next Project!
             </div>
@@ -114,6 +126,7 @@ export default function Home() {
             <motion.blockquote
               key={idx}
               className="bg-gray-900 p-8 rounded-lg border-l-4 border-yellow-400 italic"
+              style={{ fontFamily: "Arial, sans-serif" }}
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -128,7 +141,10 @@ export default function Home() {
         {/* See More Button */}
         <div className="mt-12 text-center">
           <Link href="/testimonials">
-            <button className="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition" style={{ fontFamily: "Trebuchet MS, sans-serif" }}>
+            <button
+              className="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition"
+              style={{ fontFamily: "Arial, sans-serif" }}
+            >
               See More
             </button>
           </Link>

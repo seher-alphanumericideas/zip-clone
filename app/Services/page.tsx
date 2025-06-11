@@ -9,16 +9,19 @@ const services = [
     title: "Business Strategies",
     description:
       "Crafting tailored business plans to maximize ROI and structure your growth path effectively.",
+    image: "/bs.jpg",
   },
   {
     title: "Digital Marketing",
     description:
       "End-to-end digital campaigns—including PPC, SEO, and social media—to elevate your online presence.",
+    image: "/dm.jpg",
   },
   {
     title: "Performance Optimization",
     description:
       "Ongoing analytics, A/B testing, and performance tweaking to continually improve results.",
+    image: "/po.png",
   },
 ];
 
@@ -59,7 +62,13 @@ const Services = () => {
               transition={{ duration: 0.6, delay: i * 0.2 }}
               viewport={{ once: true }}
             >
-              <span className="text-2xl font-semibold mb-4">{svc.title}</span>
+              <img
+                src={svc.image}
+                alt={svc.title}
+                className="w-48 h-36 object-cover rounded-xl mb-4"
+              />
+              <span className="text-2xl font-semibold mb-2">{svc.title}</span>
+              <p className="text-sm mb-4">{svc.description}</p>
               <Link href="/contact">
                 <button className="mt-auto bg-yellow-400 text-black px-6 py-2 rounded-full font-medium hover:bg-yellow-300 transition">
                   Get Started

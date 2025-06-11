@@ -36,8 +36,41 @@ const listAnimation = {
 
 export default function AboutPage() {
   return (
-    <section className="bg-black text-yellow-400 py-24 px-6" style={{ fontFamily: "Georgia, serif" }}>
-      <div className="max-w-4xl mx-auto text-center">
+    <section
+      className="bg-black text-yellow-400 py-24 px-6"
+      style={{ fontFamily: "Georgia, serif" }}
+    >
+      <div className="max-w-6xl mx-auto text-center">
+        {/* Image + Quote Section */}
+        <section className="flex flex-col md:flex-row items-center justify-center gap-12 mb-20">
+          <motion.img
+            src="/zip.jpg"
+            alt="Zippinderpal Singh Quote"
+            className="w-[100px] md:w-[200px] max-w-full rounded shadow-xl"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          />
+
+          <motion.div
+            className="text-center md:text-left max-w-xl"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <p
+              className="text-3xl font-bold leading-snug text-yellow-400"
+              style={{ fontFamily: "'Poppins', sans-serif" }}
+            >
+              Knowledge Is Must But Experience Is The Power
+            </p>
+            <p className="mt-4 text-xl text-yellow-300 font-medium tracking-wide">
+              #MindIt #TheZippinderWay
+            </p>
+          </motion.div>
+        </section>
+
+        {/* Header */}
         <motion.h3
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -48,6 +81,7 @@ export default function AboutPage() {
           About Me
         </motion.h3>
 
+        {/* Intro Text */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -57,16 +91,14 @@ export default function AboutPage() {
           style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
         >
           I'm <span className="font-semibold text-yellow-400">Zippinderpal Singh</span>, a seasoned digital marketing
-          professional with over a decade of experience in <span className="font-semibold">PPC</span>,{" "}
-          <span className="font-semibold">SEO</span>, and <span className="font-semibold">corporate training</span>.
+          professional with over a decade of experience in{" "}
+          <span className="font-semibold">PPC</span>, <span className="font-semibold">SEO</span>, and{" "}
+          <span className="font-semibold">corporate training</span>.
         </motion.p>
 
         {/* Awards */}
         <motion.div className="text-left mb-16">
-          <motion.h4
-            className="text-3xl font-bold mb-6"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
-          >
+          <motion.h4 className="text-3xl font-bold mb-6" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             Awards & Certifications
           </motion.h4>
           <ul className="space-y-4">
@@ -96,10 +128,7 @@ export default function AboutPage() {
 
         {/* Experience */}
         <motion.div className="text-left">
-          <motion.h4
-            className="text-3xl font-bold mb-6 text-yellow-400"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
-          >
+          <motion.h4 className="text-3xl font-bold mb-6 text-yellow-400" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             Experience
           </motion.h4>
           <ul className="space-y-4">

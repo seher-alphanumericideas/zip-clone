@@ -112,11 +112,18 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          className="text-xl md:text-2xl max-w-2xl"
+          className="text-xl md:text-2xl max-w-2xl mb-10"
         >
           Helping businesses grow through{" "}
           <span className="underline decoration-yellow-500">effective online strategies</span>.
         </motion.p>
+
+        {/* Inserted Google Event Image */}
+        <img
+          src="/pic.jpg"
+          alt="Google Event"
+          className="w-full max-w-3xl rounded-xl shadow-lg mb-10"
+        />
       </section>
 
       {/* Skills Section */}
@@ -129,13 +136,13 @@ const Hero = () => {
         </div>
       </section>
 
-      {/* Ventures Timeline Graph */}
+      {/* Ventures Timeline */}
       <section className="bg-black text-yellow-400 py-20 px-6" style={{ fontFamily: "Verdana, sans-serif" }}>
         <h3 className="text-4xl font-bold text-center mb-12 text-yellow-400">Zippinder's Ventures Timeline</h3>
         <div className="max-w-3xl mx-auto space-y-6">
           {ventures.map((venture, i) => {
             const duration = currentYear - venture.year;
-            const widthPercent = Math.min(duration / (currentYear - 2013) * 100, 100);
+            const widthPercent = Math.min((duration / (currentYear - 2013)) * 100, 100);
             return (
               <div key={i} className="flex items-center space-x-4">
                 <span className="w-36 text-left font-semibold">{venture.label}</span>
