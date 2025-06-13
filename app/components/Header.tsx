@@ -1,13 +1,20 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
   return (
     <header className="bg-black text-yellow-400 flex justify-between items-center px-6 py-4">
-      <h1 className="text-2xl font-bold" style={{ fontFamily: "cursive" }}>
-        The Zippinder Way
-      </h1>
+      <div className="w-70 relative h-24">
+        <Image
+          src="/zippinder-logo.png" // Ensure this path matches your public folder
+          alt="The Zippinder Way Logo"
+          fill
+          className="object-contain"
+          priority
+        />
+      </div>
       <nav className="space-x-6">
         {["home", "about", "blog", "clients", "contact", "hero", "testimonials", "services", "social"].map((route) => (
           <Link
