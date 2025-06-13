@@ -20,7 +20,7 @@ export default function Header() {
 
         {/* Navigation Links */}
         <nav className="flex flex-wrap justify-center items-center space-x-6 font-bold text-lg">
-          {["home", "about", "blog", "clients", "contact", "hero", "testimonials", "services", "social"].map(
+          {["Home", "About", "blog", "Clients", "Contact", "Hero", "Testimonials", "Services", "social"].map(
             (route) => (
               <Link
                 key={route}
