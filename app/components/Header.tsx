@@ -16,7 +16,7 @@ export default function Header() {
         />
       </div>
       <nav className="space-x-6">
-        {["home", "about", "blog", "clients", "contact", "hero", "testimonials", "services", "social"].map((route) => (
+        {["Home", "About", "blog", "Clients", "Contact", "Hero", "Testimonials", "Services", "social"].map((route) => (
           <Link
             key={route}
             href={`/${route === "home" ? "" : route}`}
